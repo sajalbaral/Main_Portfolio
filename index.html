@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sajal Baral</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_eB8mitZb3DBWBtM7I8etP");
+        })();
+    </script>
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <section id="landing-page" onmousemove="moveBackground(event)">
+        <nav>
+            <figure>
+                <img id="personal-logo" src="./assests/sbLogo.png" alt="">
+            </figure>
+            <ul class="nav__link--list">
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black">About</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#projects" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black">Projects</a>
+                </li>
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#contact" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    ">Contact</a>
+                </li>
+                <li class="nav__link click" onclick="toggleContrast()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    "><i class="fas fa-adjust"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <header class="header">
+            <div class="header__content">
+                <h1 class="title">Hi</h1>
+                <h1 class="title blue">I'm Sajal.</h1>
+                <p class="header__para">
+                    I am a <b class="blue">Frontend Software Engineer</b> with a strong passion
+                    for building web applications with great user experiences.
+                    <br>
+                    Here's a bit more <b class="blue click" onclick="toggleModal()">about me.</b>
+                </p>
+                <div class="social__list">
+                    <a href="https://www.linkedin.com/in/sajalbaral/" target="_blank" class="social__link click">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/sajalbaral" target="_blank" class="social__link click">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="./assests/Resume.pdf" target="_blank" class="social__link click">
+                        <i class="fas fa-file-pdf"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <a href="#">
+            <button class="mail__btn click" onclick="toggleModal()">
+                <i class="fas fa-envelope"></i>
+            </button>
+        </a>
+        <a href="#projcet" class="scroll">
+            <div class="scroll__icon click"></div>
+        </a>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
+                <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer</h4>
+                <p class="modal__para">I am a student at UNC Charlotte aspiring to be a frontend software developer. I
+                    am always looking for opportunities to further my knowledge
+                    in the field.
+                    <br>
+                    I've always had a strong passion for gaming, photography, and magic. I love how animations, visuals,
+                    and
+                    spectacles can illicit unqiue emotions to each indiviual. I strive to capture that emotion in all my
+                    projects . . . soon! I am continuing to grow and learn each day to gather all the tools I need to
+                    build my dream
+                    project!
+                </p>
+                <div class="modal__languages">
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assests/htmlLogo.png" alt="">
+                        <span class="language__name">HTML</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assests/cssLogo.png" alt="">
+                        <span class="language__name">CSS</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assests/jsLogo.png" alt="">
+                        <span class="language__name">JavaScript</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assests/reactLogo.png" alt="">
+                        <span class="language__name">React</span>
+                    </figure>
+                </div>
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+                <h3 class="modal__title modal__title--contact">
+                    Let's have a chat!
+                </h3>
+                <h4 class="modal__sub-title modal__sub-title--contact">
+                    I would love to hear from you.
+                </h4>
+                <form id="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label class="form__item--label">Name</label>
+                        <input class="input" type="text" name="user_name" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">E-mail</label>
+                        <input class="input" type="email" name="user_email" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Message</label>
+                        <textarea class="input" type="text" name="message" required></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">
+                        Send it my way
+                    </button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thank you for the message! Looking forward to speaking with soon.
+                </div>
+            </div>
+        </div>
+        <img src="./assests/fl.svg" class="shape shape--0">
+        <img src="./assests/ww.svg" class="shape shape--1">
+        <img src="./assests/gl.svg" class="shape shape--2">
+        <img src="./assests/sm.svg" class="shape shape--3">
+        <img src="./assests/bm2.svg" class="shape shape--4">
+        <img src="./assests/bm.svg" class="shape shape--5">
+        <img src="./assests/fh.svg" class="shape shape--6">
+        <img src="./assests/kh.svg" class="shape shape--7">
+        <img src="./assests/fl.svg" class="shape shape--8">
+    </section>
+    <section id="projects">
+        <div class="container">
+            <div class="row">
+                <h1 class="section__title">
+                    Here are some of my <span class="blue">projects</span>
+                </h1>
+                <ul class="project__list">
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assests/catch22.jpg" class="project__img" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__descripition--title">
+                                    Catch22
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    React
+                                </h4>
+                                <p class="project__description--para">
+                                    Project was chosen by my friends and I for a Hackathon we attended (12/31/2021 -
+                                    01/03/2022). Created this
+                                    website to better understand React. Stepped out of my comfort zone to create
+                                    something
+                                    with the little knowledge I had at the time!
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/arogyadhakal/Catch22" target="_blank"
+                                        class="project__description--link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://github.com/arogyadhakal/Catch22/tree/master/my-app"
+                                        class="project__description--link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assests/port1.png" class="project__img" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__descripition--title">
+                                    E-portfolio
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML, CSS
+                                </h4>
+                                <p class="project__description--para">
+                                    This was my first attempt at making a basic E-Portfolio for myself. I built this
+                                    project to get a better understanding of basic webpage layering and CSS animations.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/sajalbaral/first_eportfolio" target="_blank"
+                                        class="project__description--link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://sajalbaral.github.io/first_eportfolio/" target="_blank"
+                                        class="project__description--link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assests/collage.png" class="project__img" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__descripition--title">
+                                    Others
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML, CSS, JavaScript, and more!
+                                </h4>
+                                <p class="project__description--para">
+                                    Feel free to take a look at my smaller projects that helped me understand
+                                    HTML, CSS, JavaScript, and other languages!
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/sajalbaral/chrome_extension" target="_blank"
+                                        class="project__description--link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="project__description--link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row footer__row">
+                <figure>
+                    <img class="footer__logo--img" src="./assests/sbLogo.png" alt="">
+                </figure>
+                <div class="footer__social--list">
+                    <a href="https://github.com/sajalbaral" target="_blank" class="footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+                        Github
+                    </a>
+                    <a href="https://www.linkedin.com/in/sajalbaral/" target="_blank" class="footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+                        LinkedIn
+                    </a>
+                    <a href="#" onclick="toggleModal()" class="footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+                        Contact
+                    </a>
+                    <a href="./assests/Resume.pdf" target="_blank" class="footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+                        Resume
+                    </a>
+                </div>
+                <div class="footer__copyright">Copyright &copy; 2021 Sajal Baral</div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
